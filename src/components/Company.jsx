@@ -8,11 +8,20 @@ const Company = () => {
     const resp = await axios.get(
       'https://sdg-staff-directory-app.herokuapp.com/api/Company/realcompany'
     )
-    console.log('api call', resp)
+    console.log('company', resp)
+  }
+
+  const getEmployee = async () => {
+    const resp = await axios.get(
+      'https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees'
+      //
+    )
+    console.log('employee', resp)
   }
 
   useEffect(() => {
     getCompany()
+    getEmployee()
   }, [])
 
   return (
