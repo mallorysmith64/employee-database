@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
+//don't forget to add useState
 import axios from 'axios'
 
 const Company = () => {
-  const [employee, setEmployee] = useState([])
+  // const [employee, setEmployee] = useState([])
 
   const getCompany = async () => {
     const resp = await axios.get(
@@ -14,7 +15,6 @@ const Company = () => {
   const getEmployee = async () => {
     const resp = await axios.get(
       'https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees'
-      //
     )
     console.log('employees', resp)
   }
@@ -26,7 +26,7 @@ const Company = () => {
 
   return (
     <>
-      <h2>something</h2>
+      <h2>Company component renders</h2>
     </>
   )
 }
