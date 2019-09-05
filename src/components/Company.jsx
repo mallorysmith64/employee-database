@@ -16,7 +16,7 @@ const Company = () => {
       'https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees'
       //
     )
-    console.log('employee', resp)
+    console.log('employees', resp)
   }
 
   useEffect(() => {
