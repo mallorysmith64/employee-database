@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import HelloWorld from './components/HelloWorld'
+// import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
+import Company from './components/Company'
 
 class App extends Component {
   render() {
-    return <HelloWorld />
+    return <Company />
   }
 }
 
