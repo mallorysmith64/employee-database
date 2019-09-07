@@ -4,7 +4,7 @@ class AddEmployee extends Component {
   render() {
     return (
       <>
-        <h1>add employee component renders</h1>
+        <h2>add employee component renders</h2>
       </>
     )
   }
