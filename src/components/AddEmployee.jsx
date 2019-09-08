@@ -31,7 +31,7 @@ const AddEmployee = () => {
   return (
     <>
       <section className="contact-header">
-        <h5>New Employee Form</h5>
+        <h5 className="form-header">New Employee Form</h5>
       </section>
       <section className="form">
         <form action="" className="col s12" onSubmit={newEmployee}>
@@ -71,6 +71,50 @@ const AddEmployee = () => {
                     data-error="wrong"
                     data-success="right"
                   ></span>
+                </div>
+                <div className="row">
+                  <div className="input-field col s6">
+                    <input
+                      id="job_title"
+                      type="text"
+                      className="validate"
+                      onChange={updateForm}
+                    />
+                    <label htmlFor="job_title">Job Title</label>
+                  </div>
+                </div>
+                <div className="row city">
+                  <div className="input-field col s2">
+                    <input
+                      id="city"
+                      type="text"
+                      className="validate"
+                      onChange={updateForm}
+                    />
+                    <label htmlFor="city">City</label>
+                  </div>
+                  <div className="row">
+                    <div className="input-field col s1">
+                      <input
+                        id="state"
+                        type="text"
+                        className="validate"
+                        onChange={updateForm}
+                      />
+                      <label htmlFor="state">State</label>
+                    </div>
+                    <div className="row">
+                      <div className="input-field col s1">
+                        <input
+                          id="zip"
+                          type="text"
+                          className="validate"
+                          onChange={updateForm}
+                        />
+                        <label htmlFor="zip">Zip</label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
