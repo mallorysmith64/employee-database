@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
 
 const EmployeePage = props => {
   const [id] = useState(props.match.params.id)
@@ -22,11 +21,11 @@ const EmployeePage = props => {
 
   return (
     <>
-      <h2>Employee</h2>
-      <h2>Name: {[employee.firstName, employee.lastName]}</h2>
-      <h2>Job Title: {employee.jobTitle}</h2>
-      <h2>Location: {employee.zip || 'N/A'}</h2>
-      <h2>Full-time: Yes</h2>
+      <h5>Employee Profile</h5>
+      <h5>Name: {[employee.firstName, employee.lastName]}</h5>
+      <h5>Job Title: {employee.jobTitle || 'N/A'}</h5>
+      <h5>Location: {employee.zip || 'N/A'}</h5>
+      <h5>Full-time: Yes</h5>
     </>
   )
 }

@@ -35,18 +35,17 @@ const Company = () => {
 
   return (
     <>
-      <h2>Current Employees</h2>
+      <h4>Current Employees</h4>
       {data.map((name, key) => {
         return (
           <section key={key}>
-            <h3>
+            <h5>
               {/*how to make link: link to component then string interpolation using the parameter in map, then {dot notation} */}
-              Job Title: {name.jobTitle}
               <Link to={`/EmployeePage/${name.id}`}>
                 {[name.firstName, name.lastName, name.id]}
               </Link>
               {/* Hired Date: {name.hiredDate} */}
-            </h3>
+            </h5>
           </section>
         )
       })}
