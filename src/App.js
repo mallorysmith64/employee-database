@@ -13,7 +13,7 @@ class App extends Component {
             <li>
               <Link to="/">Home </Link>
               {/* <Link to="/EmployeePage">Employees</Link> */}
-              {/* <Link to="/AddEmployee">Add Employee</Link> */}
+              <Link to="/AddEmployee">Add Employee</Link>
             </li>
           </ul>
           <Switch>

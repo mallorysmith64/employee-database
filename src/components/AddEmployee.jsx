@@ -1,55 +1,62 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
 const AddEmployee = () => {
-  const [Hire, setHire] = useState({})
+  const [Hire, setHire] = useState({
+    firstName: '',
+    lastName: '',
+    jobTitle: '',
+    state: '',
+    zip: ''
+  })
 
-  const newEmployee = async () => {
+  const newEmployee = async e => {
+    e.preventDefault()
     const resp = await axios.post(
       `https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees`,
       { Hire }
     )
-    console.log('employee form', resp)
-    setHire(resp)
+    console.log('employee form', resp.data)
+    // setHire(resp.data)
   }
 
-  useEffect(() => {
-    newEmployee()
-  }, [])
+  const updateForm = e => {
+    setHire({
+      ...Hire,
+      [e.target.id]: e.target.value
+    })
+  }
+
+  // useEffect(() => {
+  //   newEmployee()
+  // }, [])
 
   return (
     <>
-      {/* <input type="text" id={firstName} onChange={handleChange} /> */}
-
       <section className="contact-header">
         <h5>New Employee Form</h5>
       </section>
       <section className="form">
-        <div class="row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
+        <form action="" className="col s12" onSubmit={newEmployee}>
+          <div className="row">
+            <div className="row">
+              <div className="input-field col s6">
+                <i className="material-icons prefix">account_circle</i>
                 <input
-                  placeholder="first name"
                   id="first_name"
                   type="text"
-                  // onChange={handleChange}
-                  class="validate"
+                  onChange={updateForm}
+                  className="validate"
                 />
                 <label for="first_name">First Name</label>
               </div>
-              <div class="input-field col s6">
-                <input
-                  placeholder="last name"
-                  id="last_name"
-                  type="text"
-                  class="validate"
-                />
+              <div className="input-field col s6">
+                <input id="last_name" type="text" className="validate" />
                 <label for="last_name">Last Name</label>
               </div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </section>
     </>
   )
