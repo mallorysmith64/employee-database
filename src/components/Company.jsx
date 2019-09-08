@@ -28,17 +28,9 @@ const Company = () => {
     setData(resp.data)
   }
 
-  // const getEmployee = async () => {
-  //   const resp = await axios.get(
-  //     'https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees/1'
-  //   )
-  //   console.log('employee id', resp)
-  // }
-
   useEffect(() => {
     getCompany()
     getEmployees()
-    // getEmployee()
   }, [])
 
   return (
@@ -49,9 +41,10 @@ const Company = () => {
           <section key={key}>
             <h3>
               {/*how to make link: link to component then string interpolation using the parameter in map, then {dot notation} */}
-              <Link to={`/EmployeePage/${name.id}`}>{name.firstName}</Link>
-              Employee Info: {[name.firstName, name.lastName, name.id]}
               Job Title: {name.jobTitle}
+              <Link to={`/EmployeePage/${name.id}`}>
+                {[name.firstName, name.lastName, name.id]}
+              </Link>
               {/* Hired Date: {name.hiredDate} */}
             </h3>
           </section>

@@ -3,35 +3,25 @@ import axios from 'axios'
 // import { Link } from 'react-router-dom'
 
 const EmployeePage = props => {
-  const [id, setId] = useState(props.match.params.id)
+  const [id] = useState(props.match.params.id)
   const [employee, setEmployee] = useState({})
 
-  const getEmployee = async () => {
+  const getEmployee = async id => {
     const resp = await axios.get(
-      'https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees/1'
+      `https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees/${id}`
     )
     console.log('employee id', resp.data)
     setEmployee(resp.data)
   }
 
   useEffect(() => {
-    getEmployee()
+    getEmployee(id)
   }, [id])
-
-  useEffect(() => {
-    console.log(props.match.params.id)
-    setId(props.match.params.id)
-  }, [props])
 
   return (
     <>
-      <h1>
-        {employee.firstName} {employee.lastName}
-      </h1>
-      {/* <details>
-        {employee.jobTitle}
-        {employee.state}
-      </details> */}
+      <h2>Employee</h2>
+      <h1>{[employee.firstName, employee.lastName]}</h1>
     </>
   )
 }
