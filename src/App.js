@@ -12,13 +12,17 @@ class App extends Component {
           <ul>
             <li>
               <Link to="/">Home </Link>
-              <Link to="/EmployeePage">Employees</Link>
-              <Link to="/AddEmployee">Add Employee</Link>
+              {/* <Link to="/EmployeePage">Employees</Link> */}
+              {/* <Link to="/AddEmployee">Add Employee</Link> */}
             </li>
           </ul>
           <Switch>
             <Route exact path="/" component={Company}></Route>
-            <Route exact path="/EmployeePage" component={EmployeePage}></Route>
+            <Route
+              exact
+              path="/employeePage/:firstName"
+              component={EmployeePage}
+            ></Route>
             <Route exact path="/AddEmployee" component={AddEmployee}></Route>
           </Switch>
         </Router>
