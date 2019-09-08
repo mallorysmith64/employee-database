@@ -18,10 +18,15 @@ const EmployeePage = props => {
     getEmployee(id)
   }, [id])
 
+  if (!employee) return 'null'
+
   return (
     <>
       <h2>Employee</h2>
-      <h1>{[employee.firstName, employee.lastName]}</h1>
+      <h2>Name: {[employee.firstName, employee.lastName]}</h2>
+      <h2>Job Title: {employee.jobTitle}</h2>
+      <h2>Location: {employee.zip || 'N/A'}</h2>
+      <h2>Full-time: Yes</h2>
     </>
   )
 }
