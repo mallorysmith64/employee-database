@@ -7,6 +7,7 @@ const AddEmployee = () => {
     lastName: '',
     email: '',
     jobTitle: '',
+    city: '',
     state: '',
     zip: ''
   })
@@ -85,6 +86,7 @@ const AddEmployee = () => {
                 </div>
                 <div className="row city">
                   <div className="input-field col s2">
+                    <i className="material-icons prefix">add_location</i>
                     <input
                       id="city"
                       type="text"
