@@ -12,17 +12,19 @@ const AddEmployee = () => {
     zip: ''
   })
 
-  const newEmployee = async e => {
-    e.preventDefault()
+  const submitNewEmployee = async e => {
+    // e.preventDefault()
+    console.log(Hire)
     const resp = await axios.post(
       `https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees`,
       { Hire }
     )
     console.log('employee form', resp.data)
-    // setHire(resp.data)
   }
 
   const updateForm = e => {
+    //prevents form from refreshing page
+    e.preventDefault()
     setHire({
       ...Hire,
       [e.target.id]: e.target.value
@@ -35,14 +37,20 @@ const AddEmployee = () => {
         <h5 className="form-header">New Employee Form</h5>
       </section>
       <section className="form">
-        <form action="" className="col s12" onSubmit={newEmployee}>
+        <form
+          action=""
+          className="col s12"
+          onSubmit={e => submitNewEmployee(e)}
+        >
+          {/* onSubmit={newEmployee} */}
           <div className="row">
             <div className="input-field col s6">
               <i className="material-icons prefix">account_circle</i>
               <input
-                id="first_name"
+                id="firstName"
                 type="text"
                 className="validate"
+                // value={Hire.firstName}
                 onChange={updateForm}
               />
               <label htmlFor="first_name">First Name</label>
@@ -50,9 +58,10 @@ const AddEmployee = () => {
             <div className="row">
               <div className="input-field col s6">
                 <input
-                  id="last_name"
+                  id="lastName"
                   type="text"
                   className="validate"
+                  // value={Hire.lastName}
                   onChange={updateForm}
                 />
                 <label htmlFor="last_name">Last Name</label>
@@ -64,6 +73,7 @@ const AddEmployee = () => {
                     id="email"
                     type="text"
                     className="validate"
+                    // value={Hire.email}
                     onChange={updateForm}
                   />
                   <label htmlFor="email">Email</label>
@@ -76,12 +86,13 @@ const AddEmployee = () => {
                 <div className="row">
                   <div className="input-field col s6">
                     <input
-                      id="job_title"
+                      id="jobTitle"
                       type="text"
                       className="validate"
+                      // value={Hire.job_Title}
                       onChange={updateForm}
                     />
-                    <label htmlFor="job_title">Job Title</label>
+                    <label htmlFor="jobTitle">Job Title</label>
                   </div>
                 </div>
                 <div className="row city">
@@ -91,6 +102,7 @@ const AddEmployee = () => {
                       id="city"
                       type="text"
                       className="validate"
+                      // value={Hire.city}
                       onChange={updateForm}
                     />
                     <label htmlFor="city">City</label>
@@ -101,6 +113,7 @@ const AddEmployee = () => {
                         id="state"
                         type="text"
                         className="validate"
+                        // value={Hire.state}
                         onChange={updateForm}
                       />
                       <label htmlFor="state">State</label>
@@ -111,11 +124,20 @@ const AddEmployee = () => {
                           id="zip"
                           type="text"
                           className="validate"
+                          // value={Hire.zip}
                           onChange={updateForm}
                         />
                         <label htmlFor="zip">Zip</label>
                       </div>
                     </div>
+                    <button
+                      className="btn waves-effect waves-light"
+                      type="submit"
+                      name="action"
+                    >
+                      <i className="material-icons right">send</i>
+                      Done
+                    </button>
                   </div>
                 </div>
               </div>
