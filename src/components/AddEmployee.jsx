@@ -13,18 +13,16 @@ const AddEmployee = () => {
   })
 
   const submitNewEmployee = async e => {
-    // e.preventDefault()
+    e.preventDefault()
     console.log(Hire)
     const resp = await axios.post(
       `https://sdg-staff-directory-app.herokuapp.com/api/realcompany/Employees`,
-      { Hire }
+      Hire
     )
     console.log('employee form', resp.data)
   }
 
   const updateForm = e => {
-    //prevents form from refreshing page
-    e.preventDefault()
     setHire({
       ...Hire,
       [e.target.id]: e.target.value
