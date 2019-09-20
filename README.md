@@ -15,7 +15,7 @@ Requirements
 - This this api to manage a company's list of employees. Check out Additional Resources for how to use the API.
 - Create a relatively unique name for your company. You will use this as your company key when calling the endpoints of the API
 
-Explorer Mode
+Explorer Mode:
  Create a react app with 3 pages and navigation between the pages.
  
  1) View All Employees page
@@ -33,11 +33,11 @@ Explorer Mode
  Your app should be styled and responsive. Have fun with it.
  Deploy your app
  
-Adventure Mode
+Adventure Mode:
  - Add the ability to delete a user
  - Add the ability to update a user
  
-Epic Mode
+Epic Mode:
  - You app current only works for one company, but now add the ability to change companies.
 
 How to use the API
