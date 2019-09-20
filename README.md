@@ -16,7 +16,7 @@ Requirements
 - Create a relatively unique name for your company. You will use this as your company key when calling the endpoints of the API
 
 Explorer Mode
- - Create a react app with 3 pages and navigation between the pages.
+ Create a react app with 3 pages and navigation between the pages.
  
  1) View All Employees page
  - This page should list all the employees for your company
